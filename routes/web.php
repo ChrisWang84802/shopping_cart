@@ -18,6 +18,7 @@ Route::group(['middleware'=>['auth']],function(){
     Route::delete('/todo/{todo}','TodoController@destory');
 });
 
+/////////////////////
 Route::get('/',[
     'uses' => 'ProductController@getIndex',
     'as' => 'product.index'
@@ -38,6 +39,27 @@ Route::get('/clear-cart',[
     'as' => 'product.ClearCart',
 ]);
 
+Route::get('/checkout',[
+    'uses' => 'ProductController@getCheckout',
+    'as' => 'checkout',
+]);
+
+Route::post('/checkout',[
+    'uses' => 'ProductController@postCheckout',
+    'as' => 'checkout',
+]);
+
+Route::get('/reduce/{id}',[
+    'uses' => 'ProductController@getReduceByOne',
+    'as' => 'product.reduceByOne',
+]);
+
+Route::get('/remove/{id}', [
+    'uses' => 'ProductController@getRemoveItem',
+    'as' => 'product.remove',
+]);
+
+/////////////////////
 
 //Route::group(['middleware'=>['auth']],function(){
 Route::get('/test',function(){   
