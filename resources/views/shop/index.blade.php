@@ -1,6 +1,7 @@
 @extends ('layouts.master')
 
 @section ('content')
+
     @foreach ($products->chunk(3) as $productChunk)
     <div class="row">
 	@foreach ($productChunk as $product)
@@ -14,9 +15,7 @@
                         <div class="clearfix">
                             <div class="pull-left price">{{ $product->price }}</div>
                             <a href="{{ route('product.addToCart',['id' => $product->id]) }}" class="btn btn-success pull-right" role="button">Add to Cart</a>
-			   
-				
-			</div>
+			            </div>
                     </div>
                 </div>
             </div>

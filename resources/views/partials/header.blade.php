@@ -8,14 +8,14 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="{{ route('product.index' )}}">Brand</a> 
+            <a class="navbar-brand" href="{{ route('product.index' ) }}">Brand</a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
 		<li>
-		     <a href="{{ route('product.shoppingCart') }} ">
+		     <a href="{{ route('product.shoppingCart') }}">
 			<i class="fa fa-shopping-cart" aria-hidden="true"></i> Shopping Cart
 		    	<span class="badge">{{ Session::has('cart') ? Session::get('cart')->totalQty : '' }}</span>
 		    </a>
